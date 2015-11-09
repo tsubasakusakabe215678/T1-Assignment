@@ -1,0 +1,287 @@
+<html>
+<head>
+<title> T1 Assignment </title>
+<script src="scripts/processing.js"></script>
+<script type="text/processing" data-processing-target="mycanvas">
+
+int rectLength;
+int rectHeight;
+int rectGap;
+
+int x;
+int y;
+int z;
+int a;
+int b;
+
+
+
+PImage oneVariable;
+PImage twoVariable;
+PImage threeVariable;
+PImage fourVariable;
+PImage fiveVariable;
+PImage sixVariable;
+PImage sevenVariable;
+PImage eightVariable;
+PImage nineVariable;
+PImage zeroVariable;
+PImage asterixVariable;
+
+PImage enterVariable;
+
+void setup()
+{
+
+	size( 1000, 1000 );
+	frameRate( 30 );
+	
+	rectLength = 100;
+	rectHeight = 100;
+	rectGap = 7;
+	
+	
+	
+
+	z = 1;
+	x = 0;
+	y = 0;
+	a = 1;
+	b = 0;
+	
+	
+	oneVariable = loadImage("images/one.png")
+	twoVariable = loadImage("images/two.png")
+	threeVariable = loadImage("images/three.png")
+	fourVariable = loadImage("images/four.png")
+	fiveVariable = loadImage("images/five.png")
+	sixVariable = loadImage("images/six.png")
+	sevenVariable = loadImage("images/seven.png")
+	eightVariable = loadImage("images/eight.png")
+	nineVariable = loadImage("images/nine.png")
+	zeroVariable = loadImage("images/zero.png")
+	asterixVariable = loadImage("images/asterix.png")
+	
+	enterVariable = loadImage("images/enter.png")
+	
+
+}
+
+
+void draw()
+{
+	background(0,0,0);
+	
+	text(x,20,20)
+	text(y,20,40)
+	
+	//boxes
+	
+	fill(255,0,0);
+	
+	//row1
+	rect(rectLength,rectHeight,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight,rectLength,rectHeight);
+	
+	//row2
+	rect(rectLength,rectHeight*2+rectGap,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight*2+rectGap,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight*2+rectGap,rectLength,rectHeight);
+	
+	//row3
+	rect(rectLength,rectHeight*3+rectGap*2,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight*3+rectGap*2,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight*3+rectGap*2,rectLength,rectHeight);
+	
+	
+	//row4
+	rect(rectLength,rectHeight*4+rectGap*3,rectLength,rectHeight);
+	rect(rectLength*2+rectGap,rectHeight*4+rectGap*3,rectLength,rectHeight);
+	rect(rectLength*3+rectGap*2,rectHeight*4+rectGap*3,rectLength,rectHeight);
+	
+	rect(rectLength*5+rectGap*4,rectHeight*3+rectGap*2,rectLength*4+rectGap*3,rectHeight);
+	
+	rect(rectLength*5+rectGap*4,rectHeight*4+rectGap*3,rectLength*2+rectGap,rectHeight);
+	
+
+//code
+//passcode 1240	
+
+if (mousePressed == true)
+{
+	if (mouseButton == LEFT && z == 1)
+	{
+		if (mouseX > 100 && mouseX < 414 &&
+			mouseY > 100 && mouseY < 414)
+			{
+				x = x+1;
+				z = 0;
+				
+				if (y > y+1 && y < y+1)
+				{
+					y = 0;
+				}
+			}
+			
+		if (mouseX > 207 && mouseX < 307 && 
+			mouseY > 421 && mouseY < 521)
+			{
+				x = x+1;
+				z = 0;
+				
+				if (y > y+1 && y < y+1)
+				{
+					y = 0;
+				}
+			}
+			
+			
+	}
+	
+	//1
+	if (mouseButton == LEFT && a == 1 && y == 0)
+	{
+		if (mouseX > 100 && mouseX < 200 &&
+			mouseY > 100 && mouseY < 200)
+			{
+				y = y+1;
+				a = 0;
+			}
+	}
+	
+	//2
+	if (mouseButton == LEFT && a == 2 && y == 1)
+	{
+		if (mouseX > 207 && mouseX < 307 &&
+			mouseY > 100 && mouseY < 200)
+			{
+				y = y+1
+				a = 0;
+			}
+	}
+	
+	//4
+	if (mouseButton == LEFT && a == 3 && y == 2)
+	{
+		if (mouseX > 100 && mouseX < 200 &&
+			mouseY > 207 && mouseY < 307)
+			{
+				y = y+1;
+				a = 0;
+			}
+			
+	}
+
+	//0
+	if (mouseButton == LEFT && a == 4 && y == 3)
+	{
+		if (mouseX > 207 && mouseX < 307 && 
+			mouseY > 421 && mouseY < 521)
+			{
+				y = y+1
+				a = 0;
+			}
+	}
+
+}
+
+
+if (mousePressed == false && x == 1)
+{	
+	image(asterixVariable, 528, 314)
+	z = 1
+	a = 2
+}
+
+
+if (mousePressed == false && x == 2)
+{
+	image(asterixVariable, 528, 314)
+	image(asterixVariable, 635, 314)
+	z = 1
+	a = 3
+	
+}
+
+if (mousePressed == false && x == 3)
+{
+	image(asterixVariable, 528, 314)
+	image(asterixVariable, 635, 314)
+	image(asterixVariable, 742, 314)
+	z = 1
+	a = 4
+}
+
+if (mousePressed == false && x == 4)
+{
+	image(asterixVariable, 528, 314)
+	image(asterixVariable, 635, 314)
+	image(asterixVariable, 742, 314)
+	image(asterixVariable, 849, 314)
+	z = 1
+	a = 5
+}
+
+if (mousePressed == false && x > 4)
+{
+	image(asterixVariable, 528, 314)
+	image(asterixVariable, 635, 314)
+	image(asterixVariable, 742, 314)
+	image(asterixVariable, 849, 314)
+	z = 1
+}
+
+if (mousePressed == true && mouseButton == LEFT)
+{
+	if (mouseX > 528 && mouseX < 735 && 
+		mouseY > 421 && mouseY < 521)
+		{
+			if (y == 4)
+			{
+			
+				b = 1;
+			
+				if (b == 1)
+				{
+					link("index2.html")
+				}
+			}
+			
+			if (b == 0)
+			{
+				link("index.html")
+			}
+		}
+	
+}
+
+
+	image(oneVariable,rectLength,rectHeight)
+	image(twoVariable,rectLength*2+rectGap,rectHeight)
+	image(threeVariable,rectLength*3+rectGap*2,rectHeight)
+
+	image(fourVariable,rectLength,rectHeight*2+rectGap)
+	image(fiveVariable,rectLength*2+rectGap,rectHeight*2+rectGap)
+	image(sixVariable,rectLength*3+rectGap*2,rectHeight*2+rectGap)
+	
+	image(sevenVariable,rectLength,rectHeight*3+rectGap*2)
+	image(eightVariable,rectLength*2+rectGap,rectHeight*3+rectGap*2)
+	image(nineVariable,rectLength*3+rectGap*2,rectHeight*3+rectGap*2)
+	
+	image(zeroVariable,rectLength*2+rectGap,rectHeight*4+rectGap*3)
+
+	
+	image(enterVariable,500+7*4,400+7*3)
+	
+	
+}
+
+</script>
+<canvas id="mycanvas"></canvas>
+</head>
+
+<body>
+
+</body>
+</html>
